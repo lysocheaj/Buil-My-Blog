@@ -1,6 +1,6 @@
 ---
 title: 'Getting Started with NextJS'
-date: '2022-08-16'
+date: '2022-08-17'
 author: 'Sochea'
 image: 'getting-started-nextjs.png'
 excerpt: 'The NextJS is react framwork for production.'
