@@ -10,21 +10,21 @@ function HomePage() {
       image: "getting-started-nextjs.png",
       excerpt: "The NextJS is react framwork for production.",
       date: "2022-08-15",
-      slug: "getting-started-with-nextjs1",
+      slug: "getting-started-with-nextjs",
     },
     {
       title: "Getting Started with NextJS",
       image: "getting-started-nextjs.png",
       excerpt: "The NextJS is react framwork for production.",
       date: "2022-08-15",
-      slug: "getting-started-with-nextjs2",
+      slug: "getting-started-with-nextjs",
     },
     {
       title: "Getting Started with NextJS",
       image: "getting-started-nextjs.png",
       excerpt: "The NextJS is react framwork for production.",
       date: "2022-08-15",
-      slug: "getting-started-with-nextjs3",
+      slug: "getting-started-with-nextjs",
     }
   ];
 
