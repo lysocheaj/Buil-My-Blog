@@ -1,31 +1,21 @@
-import AllPosts from "../../components/posts/all-posts";
+import Head from 'next/head';
+import { Fragment } from 'react';
 
-function AllPostsPage() {
-  const Dummy_Data = [
-    {
-      title: "Getting Started with NextJS",
-      image: "getting-started-nextjs.png",
-      excerpt: "The NextJS is react framwork for production.",
-      date: "2022-08-15",
-      slug: "getting-started-with-nextjs",
-    },
-    {
-      title: "Getting Started with NextJS",
-      image: "getting-started-nextjs.png",
-      excerpt: "The NextJS is react framwork for production.",
-      date: "2022-08-15",
-      slug: "getting-started-with-nextjs",
-    },
-    {
-      title: "Getting Started with NextJS",
-      image: "getting-started-nextjs.png",
-      excerpt: "The NextJS is react framwork for production.",
-      date: "2022-08-15",
-      slug: "getting-started-with-nextjs",
-    },
-  ];
+import AllPosts from '../../components/posts/all-posts';
+import { getAllPosts } from '../../lib/posts-util';
+function AllPostsPage(props) {
 
-  return <AllPosts posts={Dummy_Data} />;
+  return <AllPosts posts={props.posts} />
+}
+
+export function getStaticProps() {
+  const allPosts = getAllPosts();
+
+  return {
+    props: {
+      posts: allPosts,
+    },
+  };
 }
 
 export default AllPostsPage;

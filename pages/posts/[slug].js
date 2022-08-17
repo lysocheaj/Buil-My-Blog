@@ -2,6 +2,7 @@ import PostContent from "../../components/posts/post-detail/post-content";
 import { getPostData, getPostsFile } from "../../lib/posts-util";
 
 function PostDetailPage(props) {
+  // console.log('postData', props.post);
   return <PostContent post={props.post} />;
 }
 
