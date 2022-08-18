@@ -20,8 +20,9 @@ function PostContent(props) {
     //     />
     //   );
     // },
+
+    // looking for all content in markdown file
     paragraph(paragraph) {
-      // looking for all content in markdown file
       const { node } = paragraph;
       if (node.children[0].type === "image") {
         const image = node.children[0];
@@ -39,14 +40,15 @@ function PostContent(props) {
       }
       return <p>{paragraph.children}</p>;
     },
+    // reading block code snipet
     code(code) {
-      // reading block code snipet
-      const { language, value } = code;
+      const { className, children } = code;
+      const language = className.split("-")[1]; // className is something like language-js => We need the "js" part here
       return (
         <SyntaxHighlighter
-          language={language}
-          children={value}
           style={atomDark}
+          language={language}
+          children={children}
         />
       );
     },
@@ -55,7 +57,7 @@ function PostContent(props) {
   return (
     <article className={classes.content}>
       <PostHeader title={post.title} image={imagePath} />
-      <ReactMarkdown renderers={customRenderers}>{post.content}</ReactMarkdown>
+      <ReactMarkdown components={customRenderers}>{post.content}</ReactMarkdown>
     </article>
   );
 }

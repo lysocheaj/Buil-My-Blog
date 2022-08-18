@@ -1,6 +1,7 @@
-function ContactPage(props) {
-    return <div>ContactPage</div>
-  }
-  
-  export default ContactPage;
-  
+import ContactForm from '../components/contact/contact-form';
+
+function ContactPage() {
+  return <ContactForm />;
+}
+
+export default ContactPage;
