@@ -1,16 +1,18 @@
-import PostHeader from "./post-header";
-import classes from "./post-content.module.css";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
+import PostHeader from "./post-header";
+import classes from "./post-content.module.css";
+
 function PostContent(props) {
   const { post } = props;
+
   const imagePath = `/images/posts/${post.slug}/${post.image}`;
 
   const customRenderers = {
-    // imgage(image) {
+    // img(image) {
     //   return (
     //     <Image
     //       src={`/images/posts/${post.slug}/${image.src}`}
@@ -20,17 +22,16 @@ function PostContent(props) {
     //     />
     //   );
     // },
-
-    // looking for all content in markdown file
-    paragraph(paragraph) {
+    p(paragraph) {
       const { node } = paragraph;
-      if (node.children[0].type === "image") {
+
+      if (node.children[0].tagName === "img") {
         const image = node.children[0];
 
         return (
           <div className={classes.image}>
             <Image
-              src={`/images/posts/${post.slug}/${image.url}`}
+              src={`/images/posts/${post.slug}/${image.properties.src}`}
               alt={image.alt}
               width={600}
               height={300}
@@ -38,6 +39,7 @@ function PostContent(props) {
           </div>
         );
       }
+
       return <p>{paragraph.children}</p>;
     },
     // reading block code snipet
