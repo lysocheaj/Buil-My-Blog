@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 
 import classes from "./contact-form.module.css";
-import Notification from '../ui/notification';
+// import Notification from '../ui/notification';
+import Notification from "../ui/notification";
 
 async function sendContactData(contactDetails) {
   const response = await fetch("/api/contact", {
@@ -96,7 +97,8 @@ function ContactForm() {
             <input
               type="email"
               id="email"
-              placeholder="Your Email"
+              // placeholder="Your Email"
+              placeholder="Email"
               required
               value={enteredEmail}
               onChange={(event) => setEnteredEmail(event.target.value)}
@@ -107,16 +109,16 @@ function ContactForm() {
             <input
               type="text"
               id="name"
-              placeholder="Your Name"
+              placeholder="Name"
               required
               value={enteredName}
               onChange={(event) => setEnteredName(event.target.value)}
             />
           </div>
         </div>
+        <br />
         <div className={classes.control}>
           {/* <label htmlFor='message'>Your Message</label> */}
-          <br />
           <textarea
             id="message"
             rows="5"
