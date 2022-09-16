@@ -26,7 +26,7 @@ console.log('newMes', newMessage);
 
     try {
       client = await MongoClient.connect(
-        'mongodb+srv://sochea:mjPOGEawydCfThTG@cluster0.daiqd60.mongodb.net/events?retryWrites=true&w=majority'
+        'mongodb+srv://test:mc8BtIb22dLNWrzq@cluster0.daiqd60.mongodb.net/contact?retryWrites=true&w=majority'
       );
     } catch (error) {
       res.status(500).json({ message: 'Could not connect to database.' });
